@@ -54,7 +54,7 @@ Código `200 OK`
 Código `200 OK` 
 ---
 **PUT** `/api/v1/tarea/{id}`
-**Descripción:** Actualiza una tarea específica si pertenece al usuario autenticado.
+- **Descripción:** Actualiza una tarea específica si pertenece al usuario autenticado.
 **Body (JSON):**
 ```
 {
@@ -73,7 +73,7 @@ Código:`401 UNAUTHORIZED`
  
 ---
 **DELETE** `/api/v1/tarea/{id}`
-**Descripción:** Elimina una tarea si pertenece al usuario autenticado.
+- **Descripción:** Elimina una tarea si pertenece al usuario autenticado.
 **Respuestas exitosa**:
 Código `200 OK`
 - Tarea eliminada correctamente.
