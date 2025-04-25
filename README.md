@@ -21,7 +21,7 @@ Aplicación web que permite a los usuarios **crear y ver sus propias notas**. Es
 **Endpoint de Usuario** `/api/v1/user`
 
 GET`/api/v1/user`
-Este endpoint devuelve el **nombre real** del usuario actualmente autenticado (extraído del JWT en la cookie).
+- **Descripción:** Devuelve el **nombre real** del usuario actualmente autenticado (extraído del JWT en la cookie).
 
 **Respuesta exitosa**
 Código `200 OK` 
