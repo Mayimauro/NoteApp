@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="card-switch">
+      <label class="switch">
+        <input type="checkbox" class="toggle" #cardToggle>
+        <span class="slider"></span>
+        <span class="card-side"></span>
+        <div class="flip-card__inner">
+          <!-- FORMULARIO LOGIN -->
+          <div class="flip-card__front">
+            <div class="title">Log in</div>
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+              <input class="flip-card__input" formControlName="username" placeholder="Email" type="email">
+              <input class="flip-card__input" formControlName="password" placeholder="Password" type="password">
+              <button class="flip-card__btn" type="submit">Let’s go!</button>
+            </form>
+          </div>
+
+          <!-- FORMULARIO SIGNUP -->
+          <div class="flip-card__back">
+            <div class="title">Sign up</div>
+            <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
+              <input class="flip-card__input" formControlName="name" placeholder="Name" type="text">
+              <input class="flip-card__input" formControlName="username" placeholder="Email" type="email">
+              <input class="flip-card__input" formControlName="password" placeholder="Password" type="password">
+              <button class="flip-card__btn" type="submit">Confirm!</button>
+            </form>
+          </div>
+        </div>
+      </label>
+    </div>
+  </div>
+</div>

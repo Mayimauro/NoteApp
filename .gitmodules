@@ -1,0 +1,3 @@
+[submodule "FrontEnd-tareasapp"]
+	path = FrontEnd-tareasapp
+	url = https://github.com/Mayimauro/TareasApp.git

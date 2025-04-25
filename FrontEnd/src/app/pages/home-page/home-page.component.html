@@ -1,0 +1,14 @@
+<div class="main-container">
+<app-left-sidebar
+  (tareaSeleccionada)="mostrarTarea($event)"
+  (tareaEliminada)="onTareaEliminada($event)"
+  [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"
+  (changeIsLeftSidebarCollapsed)="changeIsLeftSidebarCollapsed($event)">
+</app-left-sidebar>
+
+<app-home
+  [tareaActiva]="tareaSeleccionada"
+  [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"
+  [screenWidth]="screenWidth()">
+</app-home>
+</div>

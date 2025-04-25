@@ -1,0 +1,12 @@
+.main-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f4f7fa;
+}
+app-home {
+  flex-grow: 1;
+  padding-right: 100px;
+  min-width: 0;
+}

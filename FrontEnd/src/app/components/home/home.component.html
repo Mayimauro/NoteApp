@@ -1,0 +1,45 @@
+<div class="body" [ngClass]="sizeClass()">
+  <!-- Si hay una tarea activa, mostramos su contenido -->
+  <div *ngIf="tareaActiva; else sinTarea">
+    <!-- Edición del título -->
+    <div *ngIf="editandoTitulo; else tituloNormal">
+      <input
+        type="text"
+        [(ngModel)]="tareaActiva.titulo"
+        (blur)="editarTitulo(tareaActiva.titulo)"
+        (keydown.enter)="editarTitulo(tareaActiva.titulo)"
+        autofocus
+        class="titulo-input"
+      />
+    </div>
+
+    <!--descripcion de la tarea-->
+    <div class="descripcion-container">
+    <textarea
+      #descripcionInput
+      class="descripcion-textarea"
+      [(ngModel)]="tareaActiva.descripcion"
+      (input)="autoResize(descripcionInput); actualizarContador()"
+      (blur)="editarDescripcion(tareaActiva.descripcion)"
+      rows="1"
+      placeholder="Comienza a escribir...">
+    </textarea>
+    <div class="contador-caracteres">{{ descripcionLength }} caracteres</div>
+    </div>
+  </div>
+
+  <!-- Si no hay tarea activa, mostramos el nombre de la tarea -->
+  <ng-template #tituloNormal>
+    <h2 (click)="editandoTitulo = true">{{ tareaActiva?.titulo }}</h2>
+  </ng-template>
+
+  <!-- Si no hay tarea activa, mostramos el botón para crear una nueva -->
+  <ng-template #sinTarea>
+    <div class="crear-nota-container">
+      <button class="crear-nota-btn" (click)="crearNuevaTarea()">
+        <i class="fas fa-plus"></i>
+        Nueva nota
+      </button>
+    </div>
+  </ng-template>
+</div>
